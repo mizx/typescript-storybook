@@ -1,5 +1,6 @@
-import * as React from 'react';
-import './App.css';
+import React from 'react';
+
+import Button from './button';
 
 import logo from './logo.svg';
 
@@ -9,6 +10,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <Button active={true} label="Test Button" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
