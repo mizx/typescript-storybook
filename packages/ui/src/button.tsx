@@ -16,7 +16,7 @@ interface IProps {
 
 export class Button extends Component<IProps> {
 
-    static defaultProps: Partial<IProps> = {
+    public static defaultProps: Partial<IProps> = {
         active: false,
         color: 'blue'
     }
