@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
@@ -15,7 +16,7 @@ stories.add(
             />
         )
     )
-)
+);
 
 stories.add(
     'Label with active class',
@@ -27,4 +28,16 @@ stories.add(
             />
         )
     )
-)
+);
+
+stories.add(
+    'Label with action',
+    withInfo({ inline: true })(
+        () => (
+            <Button
+                label="example label"
+                onClick={action('onClick')}
+            />
+        )
+    )
+);
