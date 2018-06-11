@@ -1,4 +1,5 @@
 import React, { Component, MouseEvent } from 'react';
+import { RouteComponentProps, withRouter } from 'react-router';
 
 interface IProps {
     /** apply active classname */
@@ -14,11 +15,12 @@ interface IProps {
     onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
-export class Button extends Component<IProps> {
+type Props = IProps & RouteComponentProps<{}>;
 
-    public static defaultProps: Partial<IProps> = {
-        active: false,
-        color: 'blue'
+export class ButtonComponent extends Component<Props> {
+
+    public static defaultProps: Partial<Props> = {
+        active: false
     }
 
     public render() {
@@ -27,10 +29,10 @@ export class Button extends Component<IProps> {
                 onClick={this.props.onClick}
                 className={this.props.active ? 'active' : undefined}
             >
-                {this.props.label}
+                {this.props.match.url}
             </button>
         )
     }
 }
 
-export default Button;
+export default withRouter(ButtonComponent);
